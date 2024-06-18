@@ -1,0 +1,17 @@
+{
+  "name": "rad-scraper",
+  "version": "1.0.0",
+  "description": "A Shopify product scraper",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.1",
+    "body-parser": "^1.19.0",
+    "cheerio": "^1.0.0-rc.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "shopify-api-node": "^3.13.1"
+  }
+}

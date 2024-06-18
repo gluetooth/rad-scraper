@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAD Scraper</title>
+</head>
+<body>
+    <h1>RAD Product Scraper</h1>
+    <form id="scrape-form">
+        <label for="url">Product URL:</label>
+        <input type="url" id="url" name="url" required>
+        <button type="submit">Create Product</button>
+    </form>
+    <script>
+        document.getElementById('scrape-form').addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const url = document.getElementById('url').value;
+            const response = await fetch('/api/scrape', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ url }),
+            });
+
+            if (response.ok) {
+                alert('Product created successfully');
+            } else {
+                alert('Failed to create product');
+            }
+        });
+    </script>
+</body>
+</html>
